@@ -1,5 +1,10 @@
 <?php
-require_once('koneksi.php')
+require_once('koneksi.php');
+
+$query = "SELECT * FROM film";
+$url = "index.php?page=crud/";
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +38,33 @@ require_once('koneksi.php')
             <th>Status</th>
             <th style="text-align: center;">Actions</th>
         </tr>
+        <?php
+        if($data = mysqli_query($koneksi, $query)){
+            $no = 1;
+            while($film=mysqli_fetch_object($data)){
+
+        ?>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?= $no++?></td>
+            <td><?= $film->id_kategori ?></td>
+            <td><?= $film->tanggal ?></td>
+            <td><?= $film->judul ?></td>
+            <td><?= $film->isi ?></td>
+            <td><?= $film->status ?></td>
+            <td style="text-align: center;">
+            <a href="" class="btn btn-danger btn-sm">
+            <span class="glyphicon glyphicon-trash"></span>
+            </a>
+            <a href="" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-edit"></span>
+            </a>
+            </td>
         </tr>
+        <?php
+        }
+
+    }
+        ?>
     </table>
 </body>
 
