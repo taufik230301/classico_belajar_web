@@ -1,9 +1,7 @@
 <?php
 require_once('koneksi.php');
-
 $query = "SELECT * FROM film";
 $url = "index.php?page=crud/";
-
 
 ?>
 
@@ -28,6 +26,7 @@ $url = "index.php?page=crud/";
 </head>
 
 <body>
+<a class="btn btn-default" href="<?= $url.'create_data'?>" role="button">Add</a>
     <table class="table table-hover table-bordered" style="margin-top: 10px">
         <tr class="success">
             <th width="50px">No</th>
@@ -41,8 +40,9 @@ $url = "index.php?page=crud/";
         <?php
         if($data = mysqli_query($koneksi, $query)){
             $no = 1;
-            while($film=mysqli_fetch_object($data)){
 
+            
+            while($film=mysqli_fetch_object($data)){
         ?>
         <tr>
             <td><?= $no++?></td>

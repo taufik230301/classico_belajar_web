@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2021 at 07:30 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Generation Time: Dec 22, 2021 at 07:39 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penghasilan`
+-- Table structure for table `film`
 --
 
-CREATE TABLE `penghasilan` (
+CREATE TABLE `film` (
   `no` int(11) NOT NULL,
   `id_kategori` varchar(10) NOT NULL,
   `tanggal` date NOT NULL,
@@ -37,13 +37,20 @@ CREATE TABLE `penghasilan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `film`
+--
+
+INSERT INTO `film` (`no`, `id_kategori`, `tanggal`, `judul`, `isi`, `status`) VALUES
+(4, 'Comedy', '2021-12-22', 'Mr bean', 'Cerita ini lucu', 'Tayang besok');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `penghasilan`
+-- Indexes for table `film`
 --
-ALTER TABLE `penghasilan`
+ALTER TABLE `film`
   ADD PRIMARY KEY (`no`);
 
 --
@@ -51,10 +58,10 @@ ALTER TABLE `penghasilan`
 --
 
 --
--- AUTO_INCREMENT for table `penghasilan`
+-- AUTO_INCREMENT for table `film`
 --
-ALTER TABLE `penghasilan`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `film`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
